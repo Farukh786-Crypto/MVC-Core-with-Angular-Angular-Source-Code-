@@ -1,0 +1,21 @@
+Patient Id : <input type="text" name="" [(ngModel)]="patientObj.id"><br>
+Patient Name : <input type="text" name="" [(ngModel)]="patientObj.name"><br>
+Problem Description : <input type="text" name="" [(ngModel)]="problemObj.description"><br>
+<button type="submit" (click)="AddProblem()">Add Problem</button><br>
+
+<hr>
+<b>{{patientObj.id}}</b><br>
+<b>{{patientObj.name}}</b><br>
+<!-- <b>{{patientObj.problem}}</b><br> -->
+
+<table>
+    <tr>
+        <th>Description</th>
+    </tr>
+    <tr *ngFor="let item of patientObj.problems">
+        <td>{{item.description}}</td>
+    </tr>
+</table><br>
+<input type="button" value="Add Patient to DB" (click)="Add()" />
+
+
